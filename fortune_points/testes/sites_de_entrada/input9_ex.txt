@@ -1,0 +1,3 @@
+Os vértices nesse caso não ficam exatamente no mesmo ponto do plano, pelo fato de 
+que os 4 vértices também não estão exatamente sobre o círculo, os pontos foram 
+colocados no círculo utilizando o geogebra que por sua vez também realiza aproximações.

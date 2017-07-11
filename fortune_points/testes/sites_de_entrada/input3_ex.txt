@@ -1,0 +1,10 @@
+Neste caso todos os sites são colineares, e os erros de ponto flutuante acabam fazendo com que
+as retas "paralelas" criadas se interceptem em algum ponto. Os erros de ponto flutuante também
+fazem com que as inclinações das retas também fiquem um pouco incorretas nos outros casos, porém a estrutura 
+não é alterada por esse motivo. Já no caso deste arquivo a estrutura é alterada.
+
+Porém podemos fazer um caso maior que contém esse caso, e que também terá
+sua estrutura alterada por conta dos erros de ponto flutuante.
+
+Os pontos para o teste eu retirei do geogebra, é bom lembrar que o programa 
+já utiliza aproximação para 'colocar' os pontos na reta.
