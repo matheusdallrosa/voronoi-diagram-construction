@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <math.h>
 
 #include <algorithm>
@@ -20,7 +21,7 @@ bool circle_comp(WSite a, WSite b){
   return a.get_weight() > b.get_weight();
 }
 
-std::vector<Inter> InterDetector::detect(Boundary Cqr,Boundary Crs,double W){  
+std::vector<Inter> InterDetector::detect(Boundary Cqr,Boundary Crs,double W){
   if(Cqr.get_id() == Crs.get_id()) return std::vector<Inter>();
   /*
     Existem 4 sites que utilizam as fronteiras Cqr e Crs para delimitar as fronteiras das suas regiões,
@@ -32,7 +33,7 @@ std::vector<Inter> InterDetector::detect(Boundary Cqr,Boundary Crs,double W){
   triple.insert(Crs.lowest());
   triple.insert(Crs.highest());
   /*Caso não existam três sites a intersecção já é inválida.*/
-  if(triple.size() != 3) return std::vector<Inter>(); 
+  if(triple.size() != 3) return std::vector<Inter>();
   /*O método para detecção do círculo de Apollonius utiliza os círculos ordenados por raio.*/
   std::vector<WSite> ordered_trile(triple.begin(),triple.end());
   sort(ordered_trile.begin(),ordered_trile.end(),circle_comp);
@@ -46,15 +47,15 @@ std::vector<Inter> InterDetector::detect(Boundary Cqr,Boundary Crs,double W){
     if(DEBUG){
       printf("\nTestando inter entre: %d-%s | %d-%s\n",Cqr.get_id(),Cqr.get_side() ? "PLUS" : "MINUS",
                                               Crs.get_id(),Crs.get_side() ? "PLUS" : "MINUS");
-      printf("em: (%lf,%lf)\n",p.x,p.y);    
+      printf("em: (%lf,%lf)\n",p.x,p.y);
       printf("%d %d\n",Cqr.my_point(p), Crs.my_point(p));
-    }            
-    /*Pode ser que este ponto não pertença a parte Cqr do bissetor Bqr, ou 
+    }
+    /*Pode ser que este ponto não pertença a parte Cqr do bissetor Bqr, ou
       não pertença a parte Crs do bissetor Brs.
     */
-    if(Cqr.my_point(p) & Crs.my_point(p)){      
-      inters.push_back(Inter(Cqr,Crs,p.x,p.y));  
-    }    
-  }  
+    if(Cqr.my_point(p) & Crs.my_point(p)){
+      inters.push_back(Inter(Cqr,Crs,p.x,p.y));
+    }
+  }
   return inters;
 }
