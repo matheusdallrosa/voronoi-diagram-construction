@@ -1,11 +1,9 @@
 #include "geom/line.h"
 #include "geom/point.h"
 /*
-  Estruturas para armazenar os vertices e as arestas do diagrama.
-  Se sobrar tempo vou implementar uma DCEL, na realidade uma DCEL para
-  o diagrama de Voronoi é bem simples.
+  Structs to store the vertices and edges of the diagram.
+  A DCEL should be more suitable.
 */
-
 struct Vertice : Point{
   int id;
   int b0,b1,b2;

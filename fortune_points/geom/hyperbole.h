@@ -3,13 +3,13 @@
 #include "point.h"
 
 struct Hyperbole{
-    /*Coeficientes da forma geral de uma conica.*/
+    /*Coefficients from a conic section.*/
     double A,B,C,D,E,F;
-    Hyperbole();
     
+    Hyperbole();
+
     /*
-      Construir uma hyperbole pela definicao:
-      diferenca da distancia entre dois pontos e igual a uma constante a.
+      Builds a hyperbole by definition.
     */
-    Hyperbole(Point, Point, double);        
+    Hyperbole(Point, Point, double);
 };
