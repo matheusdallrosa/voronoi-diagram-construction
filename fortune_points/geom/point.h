@@ -1,6 +1,7 @@
 #pragma once
 
-struct Point{
+class Point{
+public:
   double x,y;
   Point();
   /*
@@ -11,5 +12,3 @@ struct Point{
   bool operator<(Point)const;
   bool operator==(Point)const;
 };
-
-double dist(Point a,Point b);
