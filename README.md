@@ -9,10 +9,11 @@ Implementations of the Fortune's algorithm for the construction of Voronoi diagr
 
 - Compiles on: g++ 7.0.1
 
-TO-DO list:
+Unordered to-do list:
 * Translate all the comments to english.
 * References to the papers i've read to make this project.
 * Make a suit of test to make code refactoring.
+* Makefile.
 
 To compile the implementation for the main variant of the diagram, inside the fortune_points folder make:
 ```bash
