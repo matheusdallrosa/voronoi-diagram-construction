@@ -1,6 +1,6 @@
 #include "bisector.h"
 #include "debug.h"
-#include "geom/floating_point.h"
+#include "fortune_points/geom/floating_point.h"
 
 #include <algorithm>
 #include <stdio.h>

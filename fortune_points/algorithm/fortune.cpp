@@ -13,12 +13,12 @@ using namespace std;
 #include "status.h"
 #include "bisector.h"
 #include "inter_queue.h"
-#include "geom/floating_point.h"
-#include "geom/point.h"
-#include "geom/line.h"
-#include "geom/distance.h"
-#include "diagram/site.h"
-#include "diagram/voronoi.h"
+#include "fortune_points/geom/floating_point.h"
+#include "fortune_points/geom/point.h"
+#include "fortune_points/geom/line.h"
+#include "fortune_points/geom/distance.h"
+#include "fortune_points/diagram/site.h"
+#include "fortune_points/diagram/voronoi.h"
 
 vector<Site> sites;
 void read_sites(){
@@ -212,7 +212,7 @@ void fortune(){
         new_inter = status.right_intersec(Cqr_idx,check);
         if(check) interq.enqueue(new_inter);
       }
-      else if(Cqr.vertical() && (Cqr.mypoint(Crs.s0.x) || Cqr.mypoint(Crs.s1.x))){        
+      else if(Cqr.vertical() && (Cqr.mypoint(Crs.s0.x) || Cqr.mypoint(Crs.s1.x))){
         Bisector Crs_idx = status.insert(Crs);
         /*Testing for new intersections.*/
         bool check;

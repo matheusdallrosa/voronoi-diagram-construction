@@ -1,8 +1,8 @@
 #pragma once
 
-#include "geom/line.h"
-#include "diagram/site.h"
-#include "geom/bhaskara.h"
+#include "fortune_points/geom/line.h"
+#include "fortune_points/diagram/site.h"
+#include "fortune_points/geom/bhaskara.h"
 
 #define MINUS 0
 #define PLUS 1
