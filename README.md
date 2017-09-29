@@ -18,7 +18,7 @@ To compile the implementation for the main variant of the diagram, inside the fo
 ```bash
 g++ -std=c++11 -I . fortune_points/geom/* fortune_points/algorithm/* fortune_points/diagram/* -o builder
 ```
-Command to compile the tests:
+Command to compile the tests(you have to include the files inside the folder\__tests__/\*/\* that you want to compile):
 
 ```bash
 g++ -std=c++11  -I . fortune_points/geom/* fortune_points/__tests__/main.cpp gtest/libgtest.a -pthread -o fortune-points-tests
