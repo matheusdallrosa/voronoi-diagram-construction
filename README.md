@@ -11,8 +11,8 @@ Implementations of the Fortune's algorithm for the construction of Voronoi diagr
 
 Unordered to-do list:
 * Translate all the comments to english.
-* References to the papers i've read to make this project.
 * Make a suit of test to make code refactoring.
+* Create a .h file of the fortune's algorithm implemented on fortune.cpp files.
 * Makefile.
 
 # Fortune's algorithm
