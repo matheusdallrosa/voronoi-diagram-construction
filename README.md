@@ -35,4 +35,7 @@ g++ -std=c++11  -I . fortune_points/geom/* fortune_points/__tests__/main.cpp gte
 ```
 
 # Fortune's algorithm for weighted Voronoi diagram.
+The ideas behind the code on fortune_weighted_points/geom/appollonius_circle.* ,
+comes from this [article](http://www.sciencedirect.com/science/article/pii/S0010448505001016).
+
 To compile the weighted version check fortune_weighted_points folder.
