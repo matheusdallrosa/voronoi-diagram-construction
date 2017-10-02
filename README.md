@@ -39,3 +39,9 @@ The ideas behind the code on fortune_weighted_points/geom/appollonius_circle.* ,
 comes from this [article](http://www.sciencedirect.com/science/article/pii/S0010448505001016).
 
 To compile the weighted version check fortune_weighted_points folder.
+
+Note: The implementation of the Fortun's algorithm doesn't work for the cases
+where:
+- There is a site dominating other sites.
+- There are two sites P and Q, such that Py + Pw = Qy + Qw. Pw and Qw are the weight
+  of the sites P and Q, respectively.
