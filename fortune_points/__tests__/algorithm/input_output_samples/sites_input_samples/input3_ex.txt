@@ -1,0 +1,3 @@
+In this test all the sites contained on the input belongs to the same line.
+The floating point errors give us the false result that the bisectors intercepts them
+selves at some point, but they don't.
