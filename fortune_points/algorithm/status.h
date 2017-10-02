@@ -12,8 +12,7 @@ typedef std::pair<Site,Bisector> Region_Bound;
 struct Inter;
 
 /*
-A struct Check serve para fazermos uma busca direta por um bissetor no status da linha.
-Isso ajuda a evitar a possibilidade de não econtrar um bissetor por erro de ponto flutuante.
+The Check struct is a helper to search a bisector with it's id and site.
 */
 struct Check{
   int id,pm;
@@ -26,7 +25,7 @@ struct Check{
 
 struct Status{
   std::set<Check> valid;
-  Bisector_set bisectors;  
+  Bisector_set bisectors;
   Region_Bound find_region(Site);
   Bisector insert(Bisector);
   void erase(Bisector);
