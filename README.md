@@ -10,9 +10,8 @@ Implementations of the Fortune's algorithm for the construction of Voronoi diagr
 - Compiles on: g++ 7.0.1
 
 Unordered to-do list:
-* Translate all the comments to english.
+* Translate all the comments and debug messages to english.
 * Make a suit of test to make code refactoring.
-* Create a .h file of the fortune's algorithm implemented on fortune.cpp files.
 * Makefile.
 
 # Fortune's algorithm
