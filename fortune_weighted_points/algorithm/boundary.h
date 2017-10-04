@@ -1,10 +1,10 @@
 #ifndef boundary_header
 #define boundary_header
 
-#include "diagram/wsite.h"
+#include "fortune_weighted_points/diagram/wsite.h"
 
-#include "geom/hyperbole.h"
-#include "geom/point.h"
+#include "fortune_weighted_points/geom/hyperbole.h"
+#include "fortune_weighted_points/geom/point.h"
 
 const bool PLUS = true;
 const bool MINUS = false;
@@ -17,20 +17,20 @@ class Boundary{
     base >= p
     base >= q
   */
-  Point base;    
+  Point base;
   WSite p,q;
-    
+
   /*
     Caso a fronteira seja uma reta vertical.
   */
   double vertical_line;
-  bool is_vertical_line;  
+  bool is_vertical_line;
   /*
     Caso a fronteira seja uma hiperbole.
   */
-  Hyperbole bisector,star_bisector;  
+  Hyperbole bisector,star_bisector;
   bool side;
-public:  
+public:
   Boundary();
   /*
     Construtor utilizado para o caso de busca no status.
@@ -48,13 +48,13 @@ public:
     Retorna o site mais próximo do ponto.
   */
   WSite closest_site(Point) const;
-  void print() const;    
+  void print() const;
   int get_id()const;
   bool get_side()const;
   bool my_point(Point)const;
   WSite highest()const;
-  WSite lowest()const;  
-  WSite find_region(Point,bool&);  
+  WSite lowest()const;
+  WSite find_region(Point,bool&);
   Hyperbole get_hyperbole();
   AsymptotesDirection get_direction();
   double get_vertical_line()const;

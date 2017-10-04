@@ -2,7 +2,7 @@
 #define define
 #include <utility>
 
-#include "geom/point.h"
+#include "fortune_weighted_points/geom/point.h"
 
 typedef std::pair<int,int> ii;
 typedef std::pair<Point,Point> pp;

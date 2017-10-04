@@ -1,8 +1,8 @@
 #ifndef edge_header
 #define edge_header
 
-#include "geom/hyperbole.h"
-#include "diagram/wsite.h"
+#include "fortune_weighted_points/geom/hyperbole.h"
+#include "wsite.h"
 
 class Edge{
 public:

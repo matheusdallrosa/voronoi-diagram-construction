@@ -2,7 +2,7 @@
 #define apollonius_circle
 #include <vector>
 
-#include "geom/point.h"
+#include "point.h"
 
 /*
   Esta classe e responsável por calcular o centro do círculo de Apollonius,
@@ -24,6 +24,6 @@ public:
   representa o raio do círculo.
   Os pontos devem ser passados por ordem crescente de raio.
 */
-  static std::vector<Point> circle_center(Point &, double, Point &, double, Point &, double);     
+  static std::vector<Point> circle_center(Point &, double, Point &, double, Point &, double);
 };
 #endif

@@ -5,13 +5,13 @@
 #include <vector>
 #include <set>
 
-#include "algorithm/inter_detector.h"
-#include "algorithm/inter.h"
+#include "inter_detector.h"
+#include "inter.h"
 
-#include "diagram/wsite.h"
+#include "fortune_weighted_points/diagram/wsite.h"
 
-#include "geom/apollonius_circle.h"
-#include "geom/point.h"
+#include "fortune_weighted_points/geom/apollonius_circle.h"
+#include "fortune_weighted_points/geom/point.h"
 
 #include "debug.h"
 

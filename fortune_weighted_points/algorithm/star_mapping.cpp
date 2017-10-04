@@ -2,12 +2,12 @@
 
 #include <algorithm>
 
-#include "algorithm/star_mapping.h"
+#include "star_mapping.h"
 
-#include "common/floating_point.h"
+#include "fortune_weighted_points/common/floating_point.h"
 
-#include "geom/distance.h"
-#include "geom/line.h"
+#include "fortune_weighted_points/geom/distance.h"
+#include "fortune_weighted_points/geom/line.h"
 
 void StarMapping::map_pp(pp & p,WSite w){
   p.first.y += Distance::two_points(p.first,w) + w.get_weight();

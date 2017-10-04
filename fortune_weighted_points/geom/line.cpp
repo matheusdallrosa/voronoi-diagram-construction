@@ -1,6 +1,6 @@
-#include "geom/line.h"
+#include "line.h"
 
-#include "common/floating_point.h"
+#include "fortune_weighted_points/common/floating_point.h"
 
 Line::Line(){}
 
@@ -16,23 +16,23 @@ Line::Line(Point p0,Point p1){
   }
   else{
     this->a = -(p0.y - p1.y) / (p0.x - p1.x);
-    this->b = 1.;       
-    this->c = -(this->a * p0.x) - p0.y;     
-  }   
+    this->b = 1.;
+    this->c = -(this->a * p0.x) - p0.y;
+  }
 }
 
-bool Line::parallel(Line l)const{     
-  return !cmpf(a,l.a) && !cmpf(b,l.b);   
+bool Line::parallel(Line l)const{
+  return !cmpf(a,l.a) && !cmpf(b,l.b);
 }
 
-Point Line::operator==(Line o)const{         
-  double x = (o.b*c - b*o.c)/(o.a*b - a*o.b);     
-  double y = cmpf(b,0.) ? -(a*x + c) : -(o.a*x + o.c);    
-  return Point(x,y);  
+Point Line::operator==(Line o)const{
+  double x = (o.b*c - b*o.c)/(o.a*b - a*o.b);
+  double y = cmpf(b,0.) ? -(a*x + c) : -(o.a*x + o.c);
+  return Point(x,y);
 }
 
 bool Line::is_vertical()const{
-  return (cmpf(b,0.) == 0); 
+  return (cmpf(b,0.) == 0);
 }
 
 void Line::translate(Point p){

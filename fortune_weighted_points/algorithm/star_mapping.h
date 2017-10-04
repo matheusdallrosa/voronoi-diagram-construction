@@ -1,10 +1,10 @@
 #ifndef star_mappinh_header
 #define star_mapping_header
-#include "geom/hyperbole.h"
+#include "fortune_weighted_points/geom/hyperbole.h"
 
-#include "common/define.h"
+#include "fortune_weighted_points/common/define.h"
 
-#include "diagram/wsite.h"
+#include "fortune_weighted_points/diagram/wsite.h"
 
 class StarMapping {
 public:

@@ -3,13 +3,13 @@
 
 #include <algorithm>
 
-#include "algorithm/inter.h"
+#include "inter.h"
 
-#include "geom/distance.h"
+#include "fortune_weighted_points/geom/distance.h"
 
-#include "diagram/wsite.h"
+#include "fortune_weighted_points/diagram/wsite.h"
 
-#include "common/floating_point.h"
+#include "fortune_weighted_points/common/floating_point.h"
 
 Inter::Inter(){}
 

@@ -1,4 +1,4 @@
-#include "diagram/edge.h"
+#include "edge.h"
 
 Edge::Edge(int _id,double x,WSite _p,WSite _q){
   this->id = _id;

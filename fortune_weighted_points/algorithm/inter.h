@@ -3,24 +3,24 @@
 
 #include <vector>
 
-#include "algorithm/boundary.h"
+#include "boundary.h"
 
-#include "diagram/wsite.h"
+#include "fortune_weighted_points/diagram/wsite.h"
 
-#include "common/define.h"
+#include "fortune_weighted_points/common/define.h"
 
-#include "geom/point.h"
+#include "fortune_weighted_points/geom/point.h"
 
 class Inter : public Point{
-  ii idx;  
-  Boundary Cqr, Crs;  
+  ii idx;
+  Boundary Cqr, Crs;
 public:
   /*Círculos tangentes ao círculo com centro nesta intersecção.*/
   std::vector<WSite> tangent;
   double mapp_dist_squared, mapp_weight, mapp_y;
-  Inter();  
+  Inter();
   Inter(Boundary,Boundary,double,double);
-  ii get_idx_comp();    
+  ii get_idx_comp();
   Boundary get_Cqr()const;
   Boundary get_Crs()const;
   void print()const;

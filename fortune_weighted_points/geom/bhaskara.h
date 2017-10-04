@@ -1,6 +1,6 @@
 #ifndef bhaskara
 #define bhaskara
-#include "common/define.h"
+#include "fortune_weighted_points/common/define.h"
 
 struct Bhaskara_Equation{
   double delta,b,two_times_a;
@@ -17,7 +17,7 @@ public:
   terceiro parametro: independent term
   */
   static dd solve(double,double,double);
-  
+
   /*
     Retorna uma equacao:
     0 = (-b +- sqrt(delta) ) / 2*a
