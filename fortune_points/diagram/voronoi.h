@@ -1,5 +1,8 @@
+#pragma once
+
 #include "fortune_points/geom/line.h"
 #include "fortune_points/geom/point.h"
+
 /*
   Structs to store the vertices and edges of the diagram.
   A DCEL should be more suitable.
