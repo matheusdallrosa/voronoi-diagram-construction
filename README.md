@@ -34,6 +34,8 @@ Command to compile the tests(you have to include the files from the folder: fort
 g++ -std=c++11  -I . fortune_points/geom/* fortune_points/__tests__/main.cpp gtest/libgtest.a -pthread -o fortune-points-tests
 ```
 
+Usage example at: fortune_points/example0.cpp
+
 # Additively Weighted Voronoi diagram
 On this variant of the diagram every site has a non-negative weighted associated.
 The distance between a site P and a point Q on the plane is given by:
@@ -44,7 +46,7 @@ come from this [article](http://www.sciencedirect.com/science/article/pii/S00104
 
 To compile the weighted version check the readme inside the  fortune_weighted_points folder.
 
-Note: The implementation of the Fortun's algorithm doesn't work for the cases
+Note: The implementation of the Fortune's algorithm doesn't work for the cases
 where:
 - There is a site dominating other sites.
 - There are two sites P and Q, such that Py + Pw = Qy + Qw. Pw and Qw are the weight
