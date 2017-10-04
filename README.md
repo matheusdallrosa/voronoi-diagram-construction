@@ -37,7 +37,7 @@ g++ -std=c++11  -I . fortune_points/geom/* fortune_points/__tests__/main.cpp gte
 Usage example at: fortune_points/example0.cpp
 
 # Additively Weighted Voronoi diagram
-On this variant of the diagram every site has a non-negative weighted associated.
+On this variant of the diagram every site has a non-negative weight associated.
 The distance between a site P and a point Q on the plane is given by:
 euclidean_distance(P,Q) + Pw, where Pw is the weight of P.
 
