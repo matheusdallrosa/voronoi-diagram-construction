@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <math.h>
 
-using namespace std;
-
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -17,23 +15,15 @@ using namespace std;
 #include "fortune_points/geom/point.h"
 #include "fortune_points/geom/line.h"
 #include "fortune_points/geom/distance.h"
-#include "fortune_points/diagram/site.h"
-#include "fortune_points/diagram/voronoi.h"
+#include "fortune.h"
 
-vector<Site> sites;
-void read_sites(){
-  double x,y;
-  while(scanf("%lf %lf",&x,&y) != EOF)
-    sites.push_back(Site(sites.size(),x,y));
-}
-
-vector<Edge> edges;
-vector<Vertice> vertices;
-void fortune(){
+void fortune(std::vector<Site> &sites,
+              std::vector<Edge> &edges,
+              std::vector<Vertice> &vertices){
   int bis_id = 0;
 
-  sort(sites.begin(),sites.end());
-  vector<Site>::iterator site = sites.begin();
+  std::sort(sites.begin(),sites.end());
+  std::vector<Site>::iterator site = sites.begin();
 
   Inter_Queue interq;
 
@@ -180,7 +170,7 @@ void fortune(){
         To now the side of the new boundary we have to compare the inter's x
         coordinate with the highest site's coordinate.
       */
-      else Cqs.pm = cmpf(inter.x,max(Cqr.s1,Crs.s1).x) <= 0 ? MINUS : PLUS;
+      else Cqs.pm = cmpf(inter.x,std::max(Cqr.s1,Crs.s1).x) <= 0 ? MINUS : PLUS;
 
       edges.push_back(Edge(Cqs.id,Cqs.l,Cqs.s0.id,Cqs.s1.id));
 
@@ -233,44 +223,4 @@ void fortune(){
     }
     if(DEBUG) status.print();
   }
-}
-
-int main(void){
-  printf("Lendo sites..\n");
-  read_sites();
-  printf("Computando diagrama..\n");
-  fortune();
-  /*
-  if(sz(sites) <= 10000){
-      for(vector<Vertice>::iterator it = vertices.begin(); it != vertices.end(); it++){
-          double mapp = dist(*it,sites[edges[it->b0].s0]);
-          for(int i = 0; i < sz(sites); i++){
-            double dt = dist(sites[i],*it);
-            if(cmpf(dt,mapp) == -1){
-              printf("Wrong diagram.\n");
-              printf("%.20lf\n",EPS);
-              printf("%.20lf %.20lf\n",dt,mapp);
-              return 0;
-            }
-          }
-      }
-      printf("Correct diagram.\n");
-  } */
-  printf("Sites\n");
-  for(int i = 0; i < (int)sites.size(); i++)
-    printf("S%d = (%lf,%lf)\n",i,sites[i].x,sites[i].y);
-  printf("\nBisector:\n");
-  for(vector<Edge>::iterator it = edges.begin(); it != edges.end(); it++){
-    printf("ID: %d\n",it->id);
-    printf("Sites: %d %d\n",it->s0,it->s1);
-    printf("Bissetor: %.2lfx + %.2lfy + %.2lf = 0\n\n",it->l.a,it->l.b,it->l.c);
-  }
-  printf("Vertices:\n");
-  int cnt = 0;
-  for(vector<Vertice>::iterator it = vertices.begin(); it != vertices.end(); it++){
-    printf("V%d = (%lf, %lf)\n",cnt,it->x,it->y);
-    cnt++;
-    printf("Arestas incidentes: %d %d %d\n\n",it->b0,it->b1,it->b2);
-  }
-  return 0;
 }
