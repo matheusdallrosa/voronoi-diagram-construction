@@ -24,7 +24,7 @@ Given a set S with N points on the plane, called sites, the Voronoi diagram is a
 of the plane into N regions, one region for each site. The Voronoi diagram is very often
 called a planar graph. See more at: [Voronoi diagram wiki article](https://en.wikipedia.org/wiki/Voronoi_diagram).
 
-To compile the implementation to build the main variant of the diagram, use the following command outside the fortune_points folder:
+To compile the implementation to build the main variant of the diagram, use the following command:
 ```bash
 g++ -std=c++11 -I . fortune_points/geom/* fortune_points/algorithm/* fortune_points/diagram/* -o builder
 ```
@@ -44,7 +44,10 @@ euclidean_distance(P,Q) + Pw, where Pw is the weight of P.
 The ideas behind the code on fortune_weighted_points/geom/appollonius_circle.* ,
 come from this [article](http://www.sciencedirect.com/science/article/pii/S0010448505001016).
 
-To compile the weighted version check the readme inside the  fortune_weighted_points folder.
+To compile this implementation use the following command:
+```bash
+g++ -std=c++11 -o builder -I . fortune_weighted_points/geom/* fortune_weighted_points/algorithm/* fortune_weighted_points/diagram/* fortune_weighted_points/common/* fortune_weighted_points/*.cpp
+```
 
 Note: The implementation of the Fortune's algorithm doesn't work for the cases
 where:
