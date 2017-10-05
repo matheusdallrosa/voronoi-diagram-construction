@@ -22,14 +22,15 @@ Boundary::Boundary(Point p){
 }
 
 /*
-Este construtor deve ser utilizado quando _base é um vértice.
+This constructor must be used when _base is a vertice.
 */
 Boundary::Boundary(int _id,WSite _p, WSite _q,Point _base){
   this->id = _id;
   /*
-    Para simplificar as operações feitas com as fronteiras,
-    o site p sempre vai ser maior do que q, ou seja:
+    This:
     p.y + p.get_weight() > q.y + q.get_weight();
+    must be always true.
+    This condition makes a lot of operations easier.
   */
   if(StarWSiteComp()(_p,_q)) this->p = _q, this->q = _p;
   else this->p = _p, this->q = _q;
@@ -40,13 +41,14 @@ Boundary::Boundary(int _id,WSite _p, WSite _q,Point _base){
     this->star_bisector = StarMapping::map_bisector(p,q,bisector);
     this->side = MINUS;
     /*
-      se esta condição for verdadeira este bissetor inicia em um vértice que está na mesma posição que um site mapeado.
+      If this condition is true, then this bisector is incident on a
+      vertice whose position is the same as a mapped site.
     */
     if(!cmpf(_base.x,this->p.x) && cmpf(_base.y,this->p.y) <= 0)
       this->side = (cmpf(this->p.x,this->q.x) == -1) ? PLUS : MINUS;
     /*
-      Caso a base não esteja contida na parte MINUS da fronteira,
-      então está é a parte PLUS da fronteira.
+      If the base is not contained on the MINUS part of the bisector,
+      then this is the PLUS part of the bisector.
     */
     else if(!my_point(_base)) this->side = PLUS;
   }
@@ -77,8 +79,8 @@ Boundary::Boundary(int _id,WSite _p, WSite _q,Point _base,bool _side){
   }
 }
 
-//quem usar este método deve verificar antes se
-//a fronteira é uma reta vertical.
+// if you're using this method you must verify if
+// this bisector is vertical.
 double Boundary::get_vertical_line()const{
   return vertical_line;
 }
@@ -108,7 +110,7 @@ WSite Boundary::lowest()const{
 }
 
 /*
-  Verifica se o ponto dado s está contido nesta parte da fronteira.
+  Given a point s, my_point verifies if this bisector contains s.
 */
 bool Boundary::my_point(Point s)const{
   double s_y = s.y+this->p.get_weight();
@@ -119,17 +121,17 @@ bool Boundary::my_point(Point s)const{
     return cmpf(delta_y*delta_y,Distance::sq_two_points(s,p)) <= 0;
   }
 
-  //polinômio que representa a intersecção de s.x com star_bisector.
+  //polynomial that represents the intersection from the vertical line
+  //at s.x with the star_bisector.
   SecondDegree poly = star_bisector.x_intersec_equation(s.x);
 
-  /*Caso em que poly não precisa ser de segundo grau.*/
+  /*Case where polynomial not necessarily have second degree.*/
   if(star_bisector.direction == AsymptotesDirection::DIFF_DIRECTION ||
       star_bisector.direction == AsymptotesDirection::ONE_VERTICAL){
     if(this->side == MINUS) return cmpf(s.x,base.x) <= 0;
     /*
-    Caso a base desta fronteira esteja em um vértice,
-    mesmo que o lado seja PLUS, vamos considerar que a base
-    pertence a fronteira.
+    If the base of this bisector is a vertice, even if the side is PLUS,
+    we consider that the base belongs to this bisector.
     */
     int diff = cmpf(s.x,base.x);
     return cmpf(base.x,p.x) ? (diff >= 0) : (diff == 1);
@@ -140,19 +142,20 @@ bool Boundary::my_point(Point s)const{
   if(turn_to_left && s_side <= 0) return this->side == MINUS;
   if(!turn_to_left && s_side > 0) return this->side == PLUS;
   /*
-    Verifica se o ponto s e o menor ou maior ponto de interseccão.
+    Check if the point s is above or below the intersection point.
   */
   double d = Distance::sq_two_points(s,this->p);
   Bhaskara_Equation eq = Bhaskara::equation(poly.a,poly.b,poly.c);
   double k = eq.b + eq.two_times_a * s_y;
   double k2 = k*k + eq.delta - eq.two_times_a*eq.two_times_a*d;
   /*
-    Verificar se (sqrt(delta)-b)/(2*a) > -(sqrt(delta)+b)/(2*a) sem utilizar raíz quadrada.
+    Check if (sqrt(delta)-b)/(2*a) > -(sqrt(delta)+b)/(2*a) without
+    using the square root function.
   */
   bool is_highest_root = (cmpf(eq.two_times_a,0) == 1);
   /*
-    Decidindo se o ponto s é a menor ou a maior intersecção
-    entre a reta vertical s.x e a hipérbole mapeada.
+    Checking if s is the lowest or highest intersection
+    between the vertical line at s.x and the mapped hyperbole.
   */
   bool s_is_root = (cmpf(k2*k2,4.*k*k*eq.delta) == 0) && (cmpf(k2*k,0) >= 0);
   if(s_is_root){
@@ -169,18 +172,18 @@ bool Boundary::my_point(Point s)const{
 }
 
 void Boundary::print()const{
-  printf("Id bissetor:%d lado: %d\n",id,side);
+  printf("Bisector id:%d Side: %d\n",id,side);
   printf("Base: (%lf,%lf)\n",base.x,base.y);
   p.print();
   q.print();
   if(is_vertical()) printf("x = %lf\n\n",vertical_line);
   else {
     printf("Hyperbole: "); bisector.print();
-    printf("Hyperbole Mapeada: "); star_bisector.print();
-    printf("Assintotas: ");
-    if(star_bisector.direction == AsymptotesDirection::SAME_DIRECTION) printf("Mesma direcao\n\n");
-    if(star_bisector.direction == AsymptotesDirection::DIFF_DIRECTION) printf("Direcoes opostas\n\n");
-    if(star_bisector.direction == AsymptotesDirection::ONE_VERTICAL) printf("Uma vertical e a outra tanto faz.\n\n");
+    printf("Mapped Hyperbole: "); star_bisector.print();
+    printf("Asymptotes: ");
+    if(star_bisector.direction == AsymptotesDirection::SAME_DIRECTION) printf("Same direction\n\n");
+    if(star_bisector.direction == AsymptotesDirection::DIFF_DIRECTION) printf("Opposite directions\n\n");
+    if(star_bisector.direction == AsymptotesDirection::ONE_VERTICAL) printf("One vertical and the other is whatever.\n\n");
   }
 }
 
@@ -189,7 +192,8 @@ AsymptotesDirection Boundary::get_direction(){
 }
 
 /*
-  Retorna o site(this->p ou this->q) dono da região que contém o ponto s.
+  Returns the site(this->p or this->q) which is
+  the owner of the region that contains the point s.
 */
 WSite Boundary::find_region(Point s,bool& on_boundary){
   bool to_left = StarBoundaryComp().comp(s,*this);
@@ -209,40 +213,43 @@ bool StarBoundaryComp::comp(Point base,Boundary rs){
   Bhaskara_Equation eq = rs.star_bisector.y_bhaskara_intersec_equation(base.y);
 
   /*
-    Verificar se (sqrt(delta)-b)/(2*a) > -(sqrt(delta)+b)/(2*a) sem utilizar raíz quadrada.
+    Checking if (sqrt(delta)-b)/(2*a) > -(sqrt(delta)+b)/(2*a)
+    without using the square root function.
   */
   int a_sign = cmpf(eq.two_times_a,0.);
   bool is_highest_root = (a_sign == 1);
 
   double k = eq.two_times_a * base.x + eq.b;
   if(rs.side == MINUS){
-    if(is_highest_root){//comparar s.x com -(sqrt(delta)+b)/(2*a)
+    if(is_highest_root){
+      //compares s.x with -(sqrt(delta)+b)/(2*a)
       if(a_sign == -1) return cmpf(k,0) == 1 ? true : cmpf(k*k,eq.delta) <= 0;
       return cmpf(k,0) == 1 ? false : cmpf(k*k,eq.delta) >= 0;
     }
-    //comparar s.x com (sqrt(delta)-b)/(2*a)
+    //compares s.x with (sqrt(delta)-b)/(2*a)
     if(a_sign == -1) return cmpf(k,0) == -1 ? false : cmpf(k*k,eq.delta) >= 0;
     return cmpf(k,0) == -1 ? true : cmpf(k*k,eq.delta) <= 0;
   }
-  if(is_highest_root){//comparar s.x com (sqrt(delta)-b)/(2*a)
+  if(is_highest_root){
+    //compares s.x with (sqrt(delta)-b)/(2*a)
     if(a_sign == -1) return cmpf(k,0) == -1 ? false : cmpf(k*k,eq.delta) >= 0;
     return cmpf(k,0) == -1 ? true : cmpf(k*k,eq.delta) <= 0;
   }
-  //comparar s.x com -(sqrt(delta)+b)/(2*a)
+  //compares s.x with -(sqrt(delta)+b)/(2*a)
   if(a_sign == -1) return cmpf(k,0) == 1 ? true : cmpf(k*k,eq.delta) <= 0;
   return cmpf(k,0) == 1 ? false : cmpf(k*k,eq.delta) >= 0;
 }
 
 /*
-  Será utilizado a maior base entre as duas bases das fronteiras pq e rs.
-  A coordenada y da maior base aponta a posição da linha varredora,
-  e a coordenada x da maior base aponta a posição da base na linha varredora.
+  On the comparison we need to know the position of the sweeping line.
+  The y coordinate of the highest base between the bases of pq and rs
+  represents the position of the horizontal sweeping line on the plane.
 */
 bool StarBoundaryComp::operator()(Boundary pq,Boundary rs){
   if(!cmpf(rs.base.y,pq.base.y)){
     int x_diff = cmpf(pq.base.x,rs.base.x);
     if(x_diff) return (x_diff == -1);
-    //printf("caso especial onde mais de uma fronteira foi criada em rs.base.\n");
+    //special case where more than one bisector was created on this->base
     if(rs.side != pq.side) return pq.side < rs.side;
     if(rs.star_bisector.direction == AsymptotesDirection::SAME_DIRECTION) return (cmpf(rs.p.x,rs.q.x) == -1);
     if(pq.star_bisector.direction == AsymptotesDirection::SAME_DIRECTION) return (cmpf(pq.p.x,pq.q.x) == -1);

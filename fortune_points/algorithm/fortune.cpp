@@ -49,7 +49,7 @@ void fortune(std::vector<Site> &sites,
       Site p = *site;
 
       if(DEBUG) {
-        printf("Evento do site:\n");
+        printf("Site event:\n");
         p.print();
       }
       /*
@@ -59,9 +59,9 @@ void fortune(std::vector<Site> &sites,
       Region_Bound reg_bisector = status.find_region(p);
       Site q = reg_bisector.first;
       if(DEBUG) {
-        printf("Bissetor encontrado:\n");
+        printf("Bisector found:\n");
         reg_bisector.second.print();
-        printf("Região encontrada: %d\n\n",q.id);
+        printf("Region found: %d\n\n",q.id);
       }
       /*Search for the left neighboor for test intersection.*/
       Bisector neigh = status.left_neighbor(reg_bisector.second);
@@ -140,7 +140,7 @@ void fortune(std::vector<Site> &sites,
       */
       Inter inter = interq.next();
       if(DEBUG){
-        printf("Evento do Vértice:\n");
+        printf("Vertex event:\n");
         inter.print();
       }
       /*Creating the new boundary Cqs.*/

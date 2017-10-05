@@ -100,7 +100,7 @@ Bisector Status::neighbor(Bisector bis){
 
 void Status::print(){
   Bisector_cmp bcmp;
-  printf("Status da linha:\n");
+  printf("Sweeping line status:\n");
   for(Status_item it = bisectors.begin(); it != bisectors.end(); it++){
     it->print();
     if(DEBUG){

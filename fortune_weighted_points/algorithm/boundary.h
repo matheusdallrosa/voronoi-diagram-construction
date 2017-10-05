@@ -13,7 +13,8 @@ class Boundary{
   int id;
 
   /*
-    base é o ponto no plano onde esta fronteira foi criada.
+    base is the point on the plane where this bisector was created.
+    It's always true that:
     base >= p
     base >= q
   */
@@ -21,31 +22,33 @@ class Boundary{
   WSite p,q;
 
   /*
-    Caso a fronteira seja uma reta vertical.
+    When this bisector is a vertical line.
   */
   double vertical_line;
   bool is_vertical_line;
   /*
-    Caso a fronteira seja uma hiperbole.
+    When this bisector is a hyperbole.
   */
   Hyperbole bisector,star_bisector;
   bool side;
 public:
   Boundary();
   /*
-    Construtor utilizado para o caso de busca no status.
+    This constructor must be used to perform a search
+    on the status for the first bisector to the right
+    of the given point.
   */
   Boundary(Point);
   /*
-    Construtor para o caso de a base ser um vértice.
+    This constructor must be used when the base is a vertice.
   */
   Boundary(int,WSite, WSite,Point);
   /*
-    Construtor para o caso de a base ser um site.
+    This constructor must be used when the base is a site.
   */
   Boundary(int,WSite,WSite,Point,bool);
   /*
-    Retorna o site mais próximo do ponto.
+    Returns the closest site from the given point.
   */
   WSite closest_site(Point) const;
   void print() const;
@@ -65,7 +68,7 @@ public:
 class StarBoundaryComp{
 public:
   /*
-    Compara um ponto com uma fronteira mapeada.
+    Compares a point with a mapped bisector.
   */
   bool comp(Point,Boundary);
   bool operator()(Boundary,Boundary);

@@ -26,7 +26,7 @@ Bisector::Bisector(int _id,int _pm,Site s0,Site s1,Point loc){
   this->l.translate(Point((s0.x+s1.x)/2., (s0.y+s1.y)/2.));
 
   if(DEBUG){
-    printf("\nNovo Bissetor: \n");
+    printf("\nNew bisector: \n");
     print();
   }
 }
@@ -60,9 +60,9 @@ double Bisector::xcoord(double ly)const{
 
 void Bisector::print()const{
   printf("Id: %d\n",id);
-  printf("Lado: %s\n",pm == FAKE_BISECTOR ? "FAKE" : (pm ? "PLUS" : "MINUS") );
+  printf("Side: %s\n",pm == FAKE_BISECTOR ? "FAKE" : (pm ? "PLUS" : "MINUS") );
   printf("Sites: %d - %d | Base:%.2lf\n",s0.id,s1.id,xbase);
-  printf("Eq. da reta: %.2lf %.2lf %.2lf\n\n",this->l.a,this->l.b,this->l.c);
+  printf("Line equation: %.2lf %.2lf %.2lf\n\n",this->l.a,this->l.b,this->l.c);
 }
 
 bool Bisector::vertical()const{
