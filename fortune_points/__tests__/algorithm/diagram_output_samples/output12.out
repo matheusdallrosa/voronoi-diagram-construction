@@ -1,0 +1,34 @@
+ID: 0
+Sites: 0 1
+Bisector: 1.000000x + 0.000000y + -2.870000 = 0
+
+ID: 1
+Sites: 1 2
+Bisector: 5.081081x + 1.000000y + -31.833243 = 0
+
+ID: 2
+Sites: 1 3
+Bisector: -0.593407x + 1.000000y + 0.010659 = 0
+
+ID: 3
+Sites: 0 3
+Bisector: 0.736264x + 1.000000y + -3.805495 = 0
+
+ID: 4
+Sites: 1 4
+Bisector: 0.878788x + 1.000000y + -6.520000 = 0
+
+ID: 5
+Sites: 2 4
+Bisector: -1.629032x + 1.000000y + 8.586290 = 0
+
+ID: 6
+Sites: 3 4
+Bisector: 17.625000x + 1.000000y + -80.806250 = 0
+
+V0 = (2.870000, 1.692418)
+Incident edges: 2 0 3
+V1 = (6.023674, 1.226469)
+Incident edges: 4 1 5
+V2 = (4.436003, 2.621694)
+Incident edges: 4 2 6

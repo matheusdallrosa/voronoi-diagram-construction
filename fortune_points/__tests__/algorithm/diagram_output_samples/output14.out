@@ -1,0 +1,124 @@
+ID: 0
+Sites: 0 1
+Bisector: 1.000000x + 0.000000y + -2.690000 = 0
+
+ID: 1
+Sites: 1 2
+Bisector: 5.081081x + 1.000000y + -30.698649 = 0
+
+ID: 2
+Sites: 1 3
+Bisector: -0.593407x + 1.000000y + 0.123846 = 0
+
+ID: 3
+Sites: 0 3
+Bisector: 0.736264x + 1.000000y + -3.452967 = 0
+
+ID: 4
+Sites: 1 4
+Bisector: 0.878788x + 1.000000y + -6.141818 = 0
+
+ID: 5
+Sites: 2 4
+Bisector: -1.629032x + 1.000000y + 8.513065 = 0
+
+ID: 6
+Sites: 3 4
+Bisector: 17.625000x + 1.000000y + -77.413750 = 0
+
+ID: 7
+Sites: 4 5
+Bisector: 0.887324x + 1.000000y + -9.213521 = 0
+
+ID: 8
+Sites: 2 5
+Bisector: -0.285714x + 1.000000y + -0.950000 = 0
+
+ID: 9
+Sites: 3 6
+Bisector: 0.034091x + 1.000000y + -3.757159 = 0
+
+ID: 10
+Sites: 3 7
+Bisector: -0.775000x + 1.000000y + -2.515250 = 0
+
+ID: 11
+Sites: 0 7
+Bisector: -0.123223x + 1.000000y + -2.919668 = 0
+
+ID: 12
+Sites: 4 6
+Bisector: -1.725000x + 1.000000y + 3.608500 = 0
+
+ID: 13
+Sites: 6 7
+Bisector: -3.000000x + 1.000000y + 0.900000 = 0
+
+ID: 14
+Sites: 5 8
+Bisector: -0.890244x + 1.000000y + 0.312805 = 0
+
+ID: 15
+Sites: 4 8
+Bisector: -0.065359x + 1.000000y + -4.107908 = 0
+
+ID: 16
+Sites: 6 8
+Bisector: 1.753425x + 1.000000y + -12.564247 = 0
+
+ID: 17
+Sites: 5 9
+Bisector: 0.450980x + 1.000000y + -8.699216 = 0
+
+ID: 18
+Sites: 8 9
+Bisector: 5.950000x + 1.000000y + -45.648500 = 0
+
+ID: 19
+Sites: 6 10
+Bisector: 0.097222x + 1.000000y + -6.273611 = 0
+
+ID: 20
+Sites: 8 10
+Bisector: -1.605634x + 1.000000y + 0.194225 = 0
+
+ID: 21
+Sites: 2 9
+Bisector: 0.034043x + 1.000000y + -4.313489 = 0
+
+ID: 22
+Sites: 7 10
+Bisector: 0.982143x + 1.000000y + -8.323214 = 0
+
+ID: 23
+Sites: 9 10
+Bisector: -4.568627x + 1.000000y + 18.171765 = 0
+
+V0 = (2.690000, 1.472418)
+Incident edges: 2 0 3
+V1 = (5.843674, 1.006469)
+Incident edges: 4 1 5
+V2 = (4.256003, 2.401694)
+Incident edges: 4 2 6
+V3 = (7.044545, 2.962727)
+Incident edges: 7 5 8
+V4 = (0.620485, 2.996126)
+Incident edges: 10 3 11
+V5 = (4.187196, 3.614414)
+Incident edges: 9 6 12
+V6 = (1.534944, 3.704831)
+Incident edges: 10 9 13
+V7 = (5.359191, 4.458182)
+Incident edges: 14 7 15
+V8 = (4.649446, 4.411794)
+Incident edges: 15 12 16
+V9 = (6.719249, 5.668966)
+Incident edges: 17 14 18
+V10 = (3.798229, 5.904339)
+Incident edges: 19 16 20
+V11 = (10.518897, 3.955399)
+Incident edges: 17 8 21
+V12 = (2.316143, 6.048430)
+Incident edges: 19 13 22
+V13 = (6.067357, 9.547728)
+Incident edges: 20 18 23
