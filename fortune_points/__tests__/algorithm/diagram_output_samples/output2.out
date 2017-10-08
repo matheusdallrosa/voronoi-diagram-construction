@@ -1,3 +1,4 @@
+Number of edges: 8
 ID: 0
 Sites: 0 1
 Bisector: 7.076923x + 1.000000y + -16.173077 = 0
@@ -30,6 +31,7 @@ ID: 7
 Sites: 1 4
 Bisector: -0.458763x + 1.000000y + -1.079510 = 0
 
+Number of vertices: 4
 V0 = (2.176942, 0.767027)
 Incident edges: 1 0 2
 V1 = (1.597322, 1.573795)

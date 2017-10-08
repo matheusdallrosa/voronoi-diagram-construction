@@ -26,13 +26,14 @@ vector<Vertice> vertices;
 int main(void){
   read_sites();
   fortune(sites,edges,vertices);
-
+  printf("Number of edges: %d\n",(int)edges.size());
   for(vector<Edge>::iterator it = edges.begin(); it != edges.end(); it++){
     printf("ID: %d\n",it->id);
     printf("Sites: %d %d\n",it->s0,it->s1);
     printf("Bisector: %lfx + %lfy + %lf = 0\n\n",it->l.a,it->l.b,it->l.c);
   }
   int cnt = 0;
+  printf("Number of vertices: %d\n",(int)vertices.size());
   for(vector<Vertice>::iterator it = vertices.begin(); it != vertices.end(); it++){
     printf("V%d = (%lf, %lf)\n",cnt,it->x,it->y);
     cnt++;
