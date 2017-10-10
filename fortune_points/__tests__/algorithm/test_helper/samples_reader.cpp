@@ -36,10 +36,13 @@ void read_algorithm_output(std::string dir,
 }
 
 void read_algorithm_input(std::string dir,std::vector<Site> &sites){
-  FILE *intput = fopen(dir.c_str(),"r");
+  FILE *input = fopen(dir.c_str(),"r");
+  if(!input){
+    printf("asudhasudh\n");
+  }
   double x, y;
-  while(fscanf(intput,"%lf %lf",&x,&y)){
+  while(fscanf(input,"%lf %lf",&x,&y) != EOF){
     sites.push_back(Site(sites.size(),x,y));
   }
-  fclose(intput);
+  fclose(input);
 }
