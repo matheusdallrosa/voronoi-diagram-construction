@@ -25,10 +25,10 @@ void read_algorithm_output(std::string dir,
     edges.push_back(Edge(edgeId,Line(a,b,c),s0,s1));
   }
   double x,y;
-  int numberOfVertices = 0, e0, e1, e2;
+  int numberOfVertices = 0, verticeId, e0, e1, e2;
   fscanf(output,"Number of vertices: %d\n",&numberOfVertices);
   while(numberOfVertices--){
-    fscanf(output,"V0 = (%lf, %lf)\n",&x,&y);
+    fscanf(output,"V%d = (%lf, %lf)\n",&verticeId,&x,&y);
     fscanf(output,"Incident edges: %d %d %d\n",&e0,&e1,&e2);
     vertices.push_back(Vertice(x,y,e0,e1,e2));
   }
