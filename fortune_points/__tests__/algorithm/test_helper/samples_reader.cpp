@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "fortune_points/geom/line.h"
-#include "fortune_points/__tests__/algorithm/test_helper/algorithm_io.h"
+#include "fortune_points/__tests__/algorithm/test_helper/samples_reader.h"
 
 #include <string>
 #include <vector>
