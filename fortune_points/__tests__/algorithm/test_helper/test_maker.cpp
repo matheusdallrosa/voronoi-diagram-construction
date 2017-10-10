@@ -9,16 +9,7 @@ using namespace std;
 #include <vector>
 #include <set>
 
-struct Point{
-  int x,y;
-  Point(){}
-  Point(int _x,int _y){
-    x = _x, y = _y;
-  }
-  bool operator<(Point o)const{
-    return (y != o.y) ? y < o.y : x < o.x; 
-  }
-};
+#include "fortune_points/geom/point.h"
 
 int N,X,Y;
 set<Point> pts;
@@ -32,7 +23,7 @@ int main(){
   }
   int cnt = 0;
   for(set<Point>::iterator it = pts.begin(); it != pts.end(); it++){
-    printf("%d %d\n",it->x,it->y);
+    printf("%lf %lf\n",it->x,it->y);
     cnt++;
   }
   return 0;
