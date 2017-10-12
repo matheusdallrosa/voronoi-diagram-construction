@@ -19,7 +19,10 @@ vector<WSite> sites;
 void read_sites(){
   W = 0;
   double x,y,wi;
-  while(scanf("%lf %lf %lf",&x,&y,&wi) != EOF){
+  int n;
+  scanf("%d",&n);
+  while(n--){
+    scanf("%lf %lf %lf",&x,&y,&wi);
     W = std::max(W,wi);
     sites.push_back(WSite(sites.size(),x,y,wi));
   }
