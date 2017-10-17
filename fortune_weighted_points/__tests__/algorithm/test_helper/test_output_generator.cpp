@@ -38,9 +38,16 @@ int main(void){
   for(vector<Edge>::iterator it = edges.begin(); it != edges.end(); it++){
     printf("ID: %d\n",it->id);
     printf("Sites: %d %d\n",it->p.get_id(),it->q.get_id());
-    Hyperbole h = it->hyperbole;
-    printf("Bisector: %lfx^2 + %lfxy + %lfy^2 + %lfx + %lfy + %lf = 0\n\n",
-            h.A,h.B,h.C,h.D,h.E,h.F);
+    if(it->is_vertical){
+      printf("Is Vertical: 1\n");
+      printf("Bisector: %lf\n\n",it->vertical_line);
+    }
+    else{
+      printf("Is Vertical: 0\n");
+      Hyperbole h = it->hyperbole;
+      printf("Bisector: %lfx^2 + %lfxy + %lfy^2 + %lfx + %lfy + %lf = 0\n\n",
+              h.A,h.B,h.C,h.D,h.E,h.F);
+    }
   }
   int cnt = 0;
   printf("Number of vertices: %d\n",(int)vertices.size());
