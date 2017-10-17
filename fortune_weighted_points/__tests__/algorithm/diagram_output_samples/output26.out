@@ -1,10 +1,12 @@
 Number of edges: 2
 ID: 0
 Sites: 2 0
+Is Vertical: 0
 Bisector: 1.000000x^2 + 2.571429xy + 1.000000y^2 + -31.142857x + -32.857143y + 223.857143 = 0
 
 ID: 1
 Sites: 1 0
+Is Vertical: 0
 Bisector: 1.000000x^2 + 2.571429xy + 1.000000y^2 + -32.857143x + -31.142857y + 223.857143 = 0
 
 Number of vertices: 0

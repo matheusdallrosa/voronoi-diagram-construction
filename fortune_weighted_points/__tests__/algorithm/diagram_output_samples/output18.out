@@ -1,46 +1,57 @@
 Number of edges: 11
 ID: 0
 Sites: 1 0
+Is Vertical: 0
 Bisector: -19.250000x^2 + -0.000000xy + 1.000000y^2 + 288.750000x + -6.000000y + -1054.562500 = 0
 
 ID: 1
 Sites: 2 1
+Is Vertical: 0
 Bisector: -2.666667x^2 + 4.000000xy + -1.000000y^2 + 40.000000x + -34.000000y + -141.000000 = 0
 
 ID: 2
 Sites: 2 0
+Is Vertical: 0
 Bisector: -5.400000x^2 + -4.800000xy + 1.000000y^2 + 84.000000x + 20.800000y + -279.650000 = 0
 
 ID: 3
 Sites: 3 1
+Is Vertical: 0
 Bisector: 1.000000x^2 + -0.000000xy + -35.000000y^2 + -24.000000x + 420.000000y + -1107.250000 = 0
 
 ID: 4
 Sites: 3 2
+Is Vertical: 0
 Bisector: -1.000000x^2 + -4.800000xy + -2.400000y^2 + 54.600000x + 84.000000y + -576.450000 = 0
 
 ID: 5
 Sites: 4 0
+Is Vertical: 0
 Bisector: 1.000000x^2 + -3.428571xy + 0.000000y^2 + 8.142857x + 15.428571y + -51.750000 = 0
 
 ID: 6
 Sites: 4 2
+Is Vertical: 0
 Bisector: -2.666667x^2 + 4.000000xy + -1.000000y^2 + 16.000000x + -18.000000y + -5.000000 = 0
 
 ID: 7
 Sites: 4 3
+Is Vertical: 0
 Bisector: -5.400000x^2 + -4.800000xy + 1.000000y^2 + 135.600000x + 27.200000y + -705.050000 = 0
 
 ID: 8
 Sites: 5 0
+Is Vertical: 0
 Bisector: 1.000000x^2 + -1.750000xy + -5.000000y^2 + 4.375000x + 71.125000y + -227.281250 = 0
 
 ID: 9
 Sites: 5 4
+Is Vertical: 0
 Bisector: -1.000000x^2 + 4.000000xy + -2.666667y^2 + -24.000000x + 25.333333y + -46.666667 = 0
 
 ID: 10
 Sites: 5 3
+Is Vertical: 0
 Bisector: -20.000000x^2 + 5.333333xy + 1.000000y^2 + 269.333333x + -61.666667y + -764.083333 = 0
 
 Number of vertices: 6

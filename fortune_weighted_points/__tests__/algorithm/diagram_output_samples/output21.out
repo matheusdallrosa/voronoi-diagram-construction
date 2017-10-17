@@ -1,34 +1,42 @@
 Number of edges: 8
 ID: 0
 Sites: 1 0
+Is Vertical: 0
 Bisector: -1.000000x^2 + 3.600000xy + -1.000000y^2 + -5.600000x + -5.600000y + 22.400000 = 0
 
 ID: 1
 Sites: 2 0
+Is Vertical: 0
 Bisector: -1.000000x^2 + -3.600000xy + -1.000000y^2 + 25.600000x + 30.400000y + -133.600000 = 0
 
 ID: 2
 Sites: 3 0
+Is Vertical: 0
 Bisector: 1.000000x^2 + -0.000000xy + -8.000000y^2 + -10.000000x + 56.000000y + -71.000000 = 0
 
 ID: 3
 Sites: 3 1
+Is Vertical: 0
 Bisector: -8.000000x^2 + -0.000000xy + 1.000000y^2 + 56.000000x + -10.000000y + -71.000000 = 0
 
 ID: 4
 Sites: 3 2
+Is Vertical: 0
 Bisector: -8.000000x^2 + 0.000000xy + 1.000000y^2 + 104.000000x + -10.000000y + -311.000000 = 0
 
 ID: 5
 Sites: 4 3
+Is Vertical: 0
 Bisector: 1.000000x^2 + -0.000000xy + -8.000000y^2 + -10.000000x + 104.000000y + -311.000000 = 0
 
 ID: 6
 Sites: 4 1
+Is Vertical: 0
 Bisector: -1.000000x^2 + -3.600000xy + -1.000000y^2 + 30.400000x + 25.600000y + -133.600000 = 0
 
 ID: 7
 Sites: 4 2
+Is Vertical: 0
 Bisector: -1.000000x^2 + 3.600000xy + -1.000000y^2 + -10.400000x + -10.400000y + 70.400000 = 0
 
 Number of vertices: 4

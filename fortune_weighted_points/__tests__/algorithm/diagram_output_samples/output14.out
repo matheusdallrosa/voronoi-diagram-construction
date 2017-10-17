@@ -1,22 +1,27 @@
 Number of edges: 5
 ID: 0
 Sites: 1 0
+Is Vertical: 0
 Bisector: -8.727273x^2 + -12.000000xy + -1.000000y^2 + 190.909091x + 100.000000y + -890.909091 = 0
 
 ID: 1
 Sites: 2 0
+Is Vertical: 0
 Bisector: 1.000000x^2 + -0.000000xy + -48.000000y^2 + -4.000000x + 864.000000y + -3836.000000 = 0
 
 ID: 2
 Sites: 2 1
+Is Vertical: 0
 Bisector: -2.036364x^2 + 3.200000xy + -1.000000y^2 + -7.854545x + 0.000000y + 36.654545 = 0
 
 ID: 3
 Sites: 3 1
+Is Vertical: 0
 Bisector: 1.000000x^2 + 2.100000xy + -3.675000y^2 + -54.500000x + 86.100000y + -284.600000 = 0
 
 ID: 4
 Sites: 3 2
+Is Vertical: 0
 Bisector: -2.400000x^2 + -4.800000xy + -1.000000y^2 + 120.000000x + 66.800000y + -977.800000 = 0
 
 Number of vertices: 2
