@@ -48,6 +48,11 @@ To compile this implementation use the following command:
 g++ -std=c++11 -o builder -I . fortune_weighted_points/geom/* fortune_weighted_points/algorithm/* fortune_weighted_points/diagram/* fortune_weighted_points/common/* fortune_weighted_points/*.cpp
 ```
 
+To compile the tests:
+```bash
+g++ -std=c++11 -I . fortune_weighted_points/__tests__/main.cpp fortune_weighted_points/__tests__/algorithm/fortune_unittest.cpp fortune_weighted_points/__tests__/algorithm/test_helper/samples_reader.* fortune_weighted_points/algorithm/* fortune_weighted_points/common/* fortune_weighted_points/diagram/* fortune_weighted_points/geom/* gtest/libgtest.a -pthread -o fortune-weighted-test
+```
+
 Note: The implementation of the Fortune's algorithm doesn't work for the cases
 where:
 - There is a site dominating other sites.
