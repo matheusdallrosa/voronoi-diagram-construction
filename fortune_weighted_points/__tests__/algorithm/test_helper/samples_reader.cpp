@@ -16,18 +16,25 @@ void read_algorithm_output(std::string dir,
                             std::vector<Edge> &edges,
                             std::vector<Vertice> &vertices){
   FILE *output = fopen(dir.c_str(),"r");
-  double a, b, c;
-  int numberOfEdges = 0, edgeId, s0, s1;
+  double a, b, c, vertical_line;
+  int numberOfEdges = 0, edgeId, s0, s1, is_vertical;
   fscanf(output,"Number of edges: %d\n",&numberOfEdges);
   while(numberOfEdges--){
     fscanf(output,"ID: %d\n",&edgeId);
     fscanf(output,"Sites: %d %d\n",&s0,&s1);
-    Hyperbole h;
-    fscanf(output,"Bisector: %lfx^2 + %lfxy + %lfy^2 + %lfx + %lfy + %lf = 0\n\n",
-            &h.A,&h.B,&h.C,&h.D,&h.E,&h.F);
-    //the wsites created here are just dummy objects to handle
-    //the id of each site.
-    edges.push_back(Edge(edgeId,h,WSite(s0,0,0,0),WSite(s1,0,0,0)));
+    fscanf(output,"Is Vertical: %d\n",&is_vertical);
+    if(is_vertical){
+      fscanf(output,"Bisector: %lf\n",&vertical_line);
+      edges.push_back(Edge(edgeId,vertical_line,WSite(s0,0,0,0),WSite(s1,0,0,0)));
+    }
+    else{
+      Hyperbole h;
+      fscanf(output,"Bisector: %lfx^2 + %lfxy + %lfy^2 + %lfx + %lfy + %lf = 0\n\n",
+              &h.A,&h.B,&h.C,&h.D,&h.E,&h.F);
+      //the wsites created here are just dummy objects to handle
+      //the id of each site.
+      edges.push_back(Edge(edgeId,h,WSite(s0,0,0,0),WSite(s1,0,0,0)));
+    }
   }
   double x,y;
   int numberOfVertices = 0, verticeId, e0, e1, e2;
