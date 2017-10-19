@@ -7,7 +7,7 @@
 
 #include "fortune_weighted_points/diagram/wsite.h"
 
-#include "fortune_weighted_points/common/define.h"
+#include "common/define.h"
 
 #include "fortune_weighted_points/geom/point.h"
 

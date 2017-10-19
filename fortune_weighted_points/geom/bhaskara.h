@@ -1,6 +1,6 @@
 #ifndef bhaskara
 #define bhaskara
-#include "fortune_weighted_points/common/define.h"
+#include "common/define.h"
 
 struct Bhaskara_Equation{
   double delta,b,two_times_a;

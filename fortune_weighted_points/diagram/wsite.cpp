@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "fortune_weighted_points/common/floating_point.h"
+#include "common/floating_point.h"
 
 #include "wsite.h"
 

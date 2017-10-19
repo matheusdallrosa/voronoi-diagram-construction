@@ -2,7 +2,7 @@
 #define star_mapping_header
 #include "fortune_weighted_points/geom/hyperbole.h"
 
-#include "fortune_weighted_points/common/define.h"
+#include "common/define.h"
 
 #include "fortune_weighted_points/diagram/wsite.h"
 

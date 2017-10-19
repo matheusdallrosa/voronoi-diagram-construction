@@ -2,8 +2,8 @@
 
 #include <algorithm>
 
-#include "fortune_weighted_points/common/floating_point.h"
-#include "fortune_weighted_points/common/define.h"
+#include "common/floating_point.h"
+#include "common/define.h"
 
 
 #include "hyperbole.h"

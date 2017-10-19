@@ -4,7 +4,7 @@
 
 #include "star_mapping.h"
 
-#include "fortune_weighted_points/common/floating_point.h"
+#include "common/floating_point.h"
 
 #include "fortune_weighted_points/geom/distance.h"
 #include "fortune_weighted_points/geom/line.h"

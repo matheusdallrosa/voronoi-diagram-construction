@@ -7,7 +7,7 @@
 #include "fortune_weighted_points/diagram/wsite.h"
 #include "fortune_weighted_points/diagram/vertice.h"
 #include "fortune_weighted_points/algorithm/fortune.h"
-#include "fortune_weighted_points/common/floating_point.h"
+#include "common/floating_point.h"
 
 namespace{
   const int NUMBER_OF_TESTS = 30;

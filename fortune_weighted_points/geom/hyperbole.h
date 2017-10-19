@@ -2,7 +2,7 @@
 #define hyperbole_header
 #include <vector>
 
-#include "fortune_weighted_points/common/define.h"
+#include "common/define.h"
 
 #include "polynomial.h"
 #include "bhaskara.h"
