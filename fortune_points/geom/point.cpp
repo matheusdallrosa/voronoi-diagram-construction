@@ -1,5 +1,5 @@
 #include "point.h"
-#include "floating_point.h"
+#include "common/floating_point.h"
 
 Point::Point(){}
 

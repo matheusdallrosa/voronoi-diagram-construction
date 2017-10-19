@@ -11,7 +11,7 @@
 #include "status.h"
 #include "bisector.h"
 #include "inter_queue.h"
-#include "fortune_points/geom/floating_point.h"
+#include "common/floating_point.h"
 #include "fortune_points/geom/point.h"
 #include "fortune_points/geom/line.h"
 #include "fortune_points/geom/distance.h"

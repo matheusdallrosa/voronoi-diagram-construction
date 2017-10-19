@@ -1,4 +1,4 @@
-#include "fortune_points/geom/floating_point.h"
+#include "common/floating_point.h"
 #include "fortune_points/geom/bhaskara.h"
 #include "fortune_points/geom/distance.h"
 #include "debug.h"

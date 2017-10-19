@@ -6,7 +6,7 @@
 #include "fortune_points/diagram/site.h"
 #include "fortune_points/diagram/voronoi.h"
 #include "fortune_points/algorithm/fortune.h"
-#include "fortune_points/geom/floating_point.h"
+#include "common/floating_point.h"
 
 namespace{
   const int NUMBER_OF_TESTS = 26;
