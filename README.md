@@ -23,17 +23,19 @@ Given a set S with N points on the plane, called sites, the Voronoi diagram is a
 of the plane into N regions, one region for each site. The Voronoi diagram is very often
 called a planar graph. See more at: [Voronoi diagram wiki article](https://en.wikipedia.org/wiki/Voronoi_diagram).
 
-To compile the implementation to build the main variant of the diagram, use the following command:
+There is a usage example at: fortune_points/example0.cpp
+
+To compile the usage example( fortune_points/example0.cpp ) of the implementation to build the main variant of the diagram, use the following command:
 ```bash
-g++ -std=c++11 -I . fortune_points/geom/* fortune_points/algorithm/* fortune_points/diagram/* -o builder
+g++ -std=c++11 -I . common/* fortune_points/geom/* fortune_points/algorithm/* fortune_points/diagram/* -o builder
 ```
+Use some of the fortune_points/__tests__/algorithm/sites_input_samples as input.
+
 Command to compile the tests(you have to include the files from the folder: fortune_points/\__tests__/\*/\* that you want to compile/test):
 
 ```bash
-g++ -std=c++11  -I . fortune_points/geom/* fortune_points/__tests__/main.cpp gtest/libgtest.a -pthread -o fortune-points-tests
+g++ -std=c++11  -I . common/* fortune_points/geom/* fortune_points/__tests__/main.cpp gtest/libgtest.a -pthread -o fortune-points-tests
 ```
-
-Usage example at: fortune_points/example0.cpp
 
 # Additively Weighted Voronoi diagram
 On this variant of the diagram every site has a non-negative weight associated.
@@ -45,12 +47,12 @@ come from this [article](http://www.sciencedirect.com/science/article/pii/S00104
 
 To compile this implementation use the following command:
 ```bash
-g++ -std=c++11 -o builder -I . fortune_weighted_points/geom/* fortune_weighted_points/algorithm/* fortune_weighted_points/diagram/* fortune_weighted_points/common/* fortune_weighted_points/*.cpp
+g++ -std=c++11 -o builder -I . common/* fortune_weighted_points/geom/* fortune_weighted_points/algorithm/* fortune_weighted_points/diagram/* fortune_weighted_points/*.cpp
 ```
 
 To compile the tests:
 ```bash
-g++ -std=c++11 -I . fortune_weighted_points/__tests__/main.cpp fortune_weighted_points/__tests__/algorithm/fortune_unittest.cpp fortune_weighted_points/__tests__/algorithm/test_helper/samples_reader.* fortune_weighted_points/algorithm/* fortune_weighted_points/common/* fortune_weighted_points/diagram/* fortune_weighted_points/geom/* gtest/libgtest.a -pthread -o fortune-weighted-test
+g++ -std=c++11 -I . common/* fortune_weighted_points/__tests__/main.cpp fortune_weighted_points/__tests__/algorithm/fortune_unittest.cpp fortune_weighted_points/__tests__/algorithm/test_helper/samples_reader.* fortune_weighted_points/algorithm/* fortune_weighted_points/diagram/* fortune_weighted_points/geom/* gtest/libgtest.a -pthread -o fortune-weighted-test
 ```
 
 Note: The implementation of the Fortune's algorithm doesn't work for the cases
