@@ -27,7 +27,7 @@ There is a usage example at: fortune_points/example0.cpp
 
 To compile the usage example( fortune_points/example0.cpp ) of the implementation to build the main variant of the diagram, use the following command:
 ```bash
-g++ -std=c++11 -I . common/* fortune_points/geom/* fortune_points/algorithm/* fortune_points/diagram/* -o builder
+g++ -std=c++11 -I . common/* fortune_points/geom/* fortune_points/algorithm/* fortune_points/diagram/* fortune_points/example0.cpp -o builder
 ```
 Use some of the fortune_points/__tests__/algorithm/sites_input_samples as input.
 
